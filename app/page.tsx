@@ -13,39 +13,21 @@ import { Project } from '@/types';
 const projects: Project[] = [
   {
     id: '1',
-    title: 'E-Commerce Platform',
-    description: 'Full-stack marketplace with advanced features including real-time inventory management, payment processing, and analytics dashboard.',
-    image: '/projects/ecommerce.jpg',
-    tags: ['Next.js', 'Stripe', 'PostgreSQL', 'Redis'],
-    link: 'https://project1.com',
+    title: 'Website Puisiku',
+    description: 'Website puisi interaktif dengan desain modern dan elegan untuk menampilkan karya sastra digital secara responsif dan menarik.',
+    image: '/projects/puisiku.jpg',
+    tags: ['Vue.js', 'Tailwind', 'Supabase'],
+    link: 'https://quoterex.dpdns.org/',
     category: 'Full Stack',
   },
   {
     id: '2',
-    title: 'SaaS Analytics Dashboard',
-    description: 'Real-time analytics platform with interactive charts, user behavior tracking, and automated reporting system.',
-    image: '/projects/dashboard.jpg',
-    tags: ['React', 'D3.js', 'WebSocket', 'AWS'],
-    link: 'https://project2.com',
+    title: 'Website Undangan Ulang Tahun',
+    description: 'Website ulang tahun interaktif dengan desain modern, animasi menarik, dan tampilan responsif untuk memberikan pengalaman perayaan yang lebih personal dan berkesan.',
+    image: '/projects/ultah.jpg',
+    tags: ['HTML', 'Tailwind'],
+    link: 'https://eundangansenzyavaleksta.vercel.app/',
     category: 'Frontend',
-  },
-  {
-    id: '3',
-    title: 'Mobile Fitness App',
-    description: 'Cross-platform fitness application with AI-powered workout recommendations and progress tracking.',
-    image: '/projects/fitness.jpg',
-    tags: ['React Native', 'TensorFlow', 'Firebase'],
-    link: 'https://project3.com',
-    category: 'Mobile',
-  },
-  {
-    id: '4',
-    title: 'AI Content Generator',
-    description: 'Advanced content generation platform using GPT models with custom training and fine-tuning capabilities.',
-    image: '/projects/ai.jpg',
-    tags: ['Python', 'FastAPI', 'OpenAI', 'Docker'],
-    link: 'https://project4.com',
-    category: 'AI/ML',
   },
 ];
 
@@ -54,12 +36,10 @@ export default function Home() {
     <main className="bg-black">
       <Navigation />
       
-      {/* Hero Section */}
       <section id="home">
         <HeroSection />
       </section>
 
-      {/* Projects Section */}
       <section id="projects" className="py-20 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
@@ -81,21 +61,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills Section */}
       <section id="skills">
         <SkillsSection />
       </section>
 
-      {/* Experience Section */}
       <section id="experience" className="py-20 bg-gray-900">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="text-5xl font-bold text-white mb-4">
-                Work Experience
+                Learning Experience
               </h2>
               <p className="text-xl text-gray-400">
-                Perjalanan karir profesional saya
+                Perjalanan belajar saya hingga sekarang
               </p>
             </div>
           </ScrollReveal>
@@ -103,22 +81,22 @@ export default function Home() {
           <div className="space-y-12">
             {[
               {
-                company: 'Tech Corp',
-                role: 'Senior Frontend Developer',
-                period: '2022 - Present',
-                description: 'Memimpin tim frontend untuk produk SaaS dengan 100K+ users. Mengoptimalkan performa dan implementasi fitur baru.',
+                company: 'Python, NodeJS',
+                role: 'Backend',
+                period: '2018-Sekarang',
+                description: 'Pertama kali saya belajar bahasa pemrograman python mulai tahun 2018.',
               },
               {
-                company: 'Digital Agency',
-                role: 'Full Stack Developer',
-                period: '2020 - 2022',
-                description: 'Membangun 50+ website dan aplikasi web untuk berbagai klien. Spesialisasi dalam e-commerce dan dashboard analytics.',
+                company: 'HTML, CSS, JavaScript, PHP',
+                role: 'Frontend',
+                period: '2020-Sekarang',
+                description: 'Saya mulai belajar bahasa pemrograman HTML, CSS, JavaScript, dan PHP mulai dari tahun 2020.',
               },
               {
-                company: 'Creative Studio',
-                role: 'UI/UX Designer',
-                period: '2019 - 2020',
-                description: 'Mendesain mobile apps dengan rating tinggi. Menciptakan design system yang scalable.',
+                company: 'React, MySQL, TypeScript, DLL',
+                role: 'Frontend & Backend',
+                period: '2024-Sekarang',
+                description: 'Setelah Berkembangnya AI, saya mulai mencoba tantangan baru dengan mulai belajar memahami bahasa pemrograman seperti React, MySQL, TypeScript, Dan masih banyak lagi.',
               },
             ].map((exp, index) => (
               <ScrollReveal key={index} delay={index * 0.2}>
@@ -141,12 +119,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section id="contact">
         <ContactForm />
       </section>
 
-      {/* AI Chat Component */}
       <AIChat />
     </main>
   );
