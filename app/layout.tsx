@@ -6,8 +6,8 @@ import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvide
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Premium Portfolio',
-  description: 'Creative Developer & Designer Portfolio',
+  title: 'Portofolio | Elga Rexsa',
+  description: 'Dirancang untuk menampilkan proyek inovatif, desain imersif, dan pengalaman web modern melalui platform portofolio yang bersih dan responsif.',
 };
 
 export default function RootLayout({
