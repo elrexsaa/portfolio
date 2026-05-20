@@ -54,7 +54,7 @@ export default function HeroSection() {
     return () => ctx.revert();
   }, []);
 
-  const titleWords = "Creative Developer & Designer".split(' ');
+  const titleWords = "Khrysdyan Elga Rexsa Purba".split(' ');
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-violet-800">
@@ -73,7 +73,7 @@ export default function HeroSection() {
           className="mb-8"
         >
           <span className="inline-block px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium border border-white/20">
-            👋 Welcome to my portfolio
+            👋 Hallo, selamat datang di portofolio saya
           </span>
         </motion.div>
 
@@ -92,7 +92,7 @@ export default function HeroSection() {
           ref={subtitleRef}
           className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto mb-12"
         >
-          Crafting digital experiences with cutting-edge technology and creative design
+          Membangun pengalaman digital melalui perpaduan teknologi modern dan desain kreatif.
         </p>
 
         <motion.div
@@ -101,12 +101,16 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 1.5 }}
           className="flex gap-4 justify-center"
         >
-          <button className="px-8 py-4 bg-white text-gray-900 rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
-            View Projects
-          </button>
-          <button className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold hover:bg-white/10 transition-all duration-300">
-            Contact Me
-          </button>
+          <a href="projects">
+            <button className="px-8 py-4 bg-white text-gray-900 rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
+              View Projects
+            </button>
+          </a>
+          <a href="#contact">
+            <button className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold hover:bg-white/10 transition-all duration-300">
+              Contact Me
+            </button>
+          </a>
         </motion.div>
       </div>
     </section>
