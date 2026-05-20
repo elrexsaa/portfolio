@@ -1,4 +1,3 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
     GROQ_API_KEY: process.env.GROQ_API_KEY,
@@ -6,7 +5,7 @@ const nextConfig = {
     TELEGRAM_CHAT_ID: process.env.TELEGRAM_CHAT_ID,
   },
   images: {
-    domains: ['localhost', 'your-domain.com'],
+    domains: ['elgarexsaa.my.id'],
   },
 };
 
