@@ -101,7 +101,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 1.5 }}
           className="flex gap-4 justify-center"
         >
-          <a href="projects">
+          <a href="#projects">
             <button className="px-8 py-4 bg-white text-gray-900 rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
               View Projects
             </button>
