@@ -86,7 +86,7 @@ export default function ContactForm() {
               {...register('email')}
               type="email"
               className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 backdrop-blur-sm"
-              placeholder="email@anda.com"
+              placeholder="email@domain.com"
             />
             {errors.email && (
               <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>
