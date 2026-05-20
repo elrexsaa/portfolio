@@ -51,7 +51,7 @@ export async function POST(req: Request) {
         { role: 'system', content: SYSTEM_PROMPT },
         ...messages,
       ],
-      model: 'mixtral-8x7b-32768', // atau 'llama2-70b-4096'
+      model: 'llama-3.3-70b-versatile', // atau 'llama-3.1-8b-instant'
       temperature: 0.7,
       max_tokens: 1000,
       top_p: 1,
