@@ -49,6 +49,7 @@ const messages = {
       send: 'Kirim Pesan',
       sending: 'Mengirim...',
       success: 'Pesan berhasil terkirim! Saya akan segera menghubungi Anda.',
+      success_btn: 'Pesan berhasil terkirim!',
     },
     preloader: {
       loading: 'Sedang Memuat',
@@ -102,6 +103,7 @@ const messages = {
       send: 'Send Message',
       sending: 'Sending...',
       success: 'Message sent successfully! I will contact you soon.',
+      success_btn: 'Message sent successfully!',
     },
     preloader: {
       loading: 'Loading',
