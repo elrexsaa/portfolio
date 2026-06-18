@@ -158,18 +158,36 @@ async function handleSubmit() {
 }
 
 onMounted(() => {
-  gsap.to("#contact .animate-reveal", {
-    opacity: 1,
-    y: 0,
-    duration: 0.8,
-    stagger: 0.15,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '#contact',
-      start: 'top 85%',
-      once: true
-    }
-  })
+  const initGSAP = () => {
+    // Refresh ScrollTrigger biar dia hitung ulang posisi layout setelah aset keload
+    ScrollTrigger.refresh()
+
+    gsap.to("#contact .animate-reveal", {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '#contact',
+        start: 'top 90%',
+        once: true,
+        // Tambahan fallback jika posisi berantakan
+        onEnter: () => {
+          gsap.set("#contact .animate-reveal", { opacity: 1, y: 0 })
+        }
+      }
+    })
+  }
+
+  // Jalankan aman pas window keload sempurna, atau kasih fallback delay pendek
+  if (document.readyState === 'complete') {
+    initGSAP()
+  } else {
+    window.addEventListener('load', initGSAP)
+    // Trik pamungkas: delay 500ms buat jaminan render kelar
+    setTimeout(initGSAP, 500)
+  }
 })
 </script>
 
