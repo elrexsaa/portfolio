@@ -21,8 +21,8 @@
           <ProjectsSection />
           <EducationSection />
           <ContactSection />
-        </main>
-        <FooterSection />
+          <FooterSection />
+      </main>
       </div>
     </transition>
   </div>
