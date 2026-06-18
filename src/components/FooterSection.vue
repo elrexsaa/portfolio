@@ -12,7 +12,7 @@
 
         <!-- Copyright -->
         <p class="font-sans text-xs text-ink-400 dark:text-cream-200/30 text-center">
-          © {{ new Date().getFullYear() }} Khrysdyan Elga Rexsa Purba. {{ $t('footer.rights') }}
+          Copyright {{ new Date().getFullYear() }} Khrysdyan Elga Rexsa Purba. {{ $t('footer.rights') }}
         </p>
 
         <!-- Social links -->
