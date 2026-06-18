@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --scrollbar-width: 0px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    cursor: none !important;
+  }
+
+  body {
+    @apply bg-cream-50 text-ink-800 font-sans transition-colors duration-500;
+  }
+
+  .dark body {
+    @apply bg-ink-900 text-cream-100;
+  }
+
+  ::selection {
+    @apply bg-gold-400 text-white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gold-400 rounded-full;
+  }
+}
+
+@layer components {
+  .section-eyebrow {
+    @apply font-sans text-xs font-semibold tracking-[0.25em] uppercase text-gold-500 dark:text-gold-400;
+  }
+
+  .section-heading {
+    @apply font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-ink-900 dark:text-cream-50 leading-tight;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 bg-gold-500 hover:bg-gold-600 text-white font-sans font-medium text-sm tracking-wide rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-gold-500/30 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 border border-ink-800/20 dark:border-cream-100/20 text-ink-800 dark:text-cream-100 font-sans font-medium text-sm tracking-wide rounded-full transition-all duration-300 hover:border-gold-500 hover:text-gold-500 dark:hover:border-gold-400 dark:hover:text-gold-400 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-md bg-white/50 dark:bg-ink-800/50 border border-white/60 dark:border-white/10 shadow-xl;
+  }
+
+  .nav-glass {
+    @apply backdrop-blur-xl bg-cream-50/80 dark:bg-ink-900/80 border-b border-ink-800/5 dark:border-cream-100/5 shadow-sm shadow-ink-800/5;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animation-delay-1 { animation-delay: 1s; }
+  .animation-delay-2 { animation-delay: 2s; }
+  .animation-delay-3 { animation-delay: 3s; }
+  .animation-delay-4 { animation-delay: 4s; }
+
+  .clip-reveal {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  .snap-mandatory-y {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+
+  .snap-start-child {
+    scroll-snap-align: start;
+  }
+}
