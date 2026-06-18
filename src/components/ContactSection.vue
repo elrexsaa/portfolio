@@ -159,7 +159,6 @@ async function handleSubmit() {
 
 onMounted(() => {
   const initGSAP = () => {
-    // Refresh ScrollTrigger biar dia hitung ulang posisi layout setelah aset keload
     ScrollTrigger.refresh()
 
     gsap.to("#contact .animate-reveal", {
@@ -170,22 +169,16 @@ onMounted(() => {
       ease: 'power3.out',
       scrollTrigger: {
         trigger: '#contact',
-        start: 'top 90%',
-        once: true,
-        // Tambahan fallback jika posisi berantakan
-        onEnter: () => {
-          gsap.set("#contact .animate-reveal", { opacity: 1, y: 0 })
-        }
+        start: 'top 95%',
+        once: true
       }
     })
   }
 
-  // Jalankan aman pas window keload sempurna, atau kasih fallback delay pendek
   if (document.readyState === 'complete') {
     initGSAP()
   } else {
     window.addEventListener('load', initGSAP)
-    // Trik pamungkas: delay 500ms buat jaminan render kelar
     setTimeout(initGSAP, 500)
   }
 })
@@ -194,4 +187,17 @@ onMounted(() => {
 <style scoped>
 .fade-enter-active, .fade-leave-active { transition: opacity 0.4s ease; }
 .fade-enter-from, .fade-leave-to { opacity: 0; }
+
+/* 🌟 SOLUSI PAMUNGKAS: Jaminan CSS Fallback jika user langsung ke #contact atau GSAP terhambat scroll */
+@media (prefers-reduced-motion: reduce) {
+  .animate-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+:target .animate-reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
 </style>
