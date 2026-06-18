@@ -22,7 +22,7 @@
           <EducationSection />
           <ContactSection />
           <FooterSection />
-      </main>
+        </main>
       </div>
     </transition>
   </div>
