@@ -170,11 +170,19 @@ async function handleSubmit() {
 onMounted(() => {
   const targets = [eyebrowEl.value, headingEl.value, subtitleEl.value, infoEl.value, formEl.value]
   targets.forEach((el, i) => {
+    if (!el) return // Skip jika elemen belum siap/null
+    
     gsap.to(el, {
-      opacity: 1, y: 0, duration: 0.8,
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
       delay: i * 0.1,
       ease: 'power3.out',
-      scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 88%',
+        once: true
+      }
     })
   })
 })
