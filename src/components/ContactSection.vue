@@ -9,19 +9,19 @@
       <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
         <div>
-          <div class="opacity-0 translate-y-4 mb-3 transition-opacity duration-300">
+          <div class="mb-3">
             <span class="section-eyebrow">{{ $t('contact.eyebrow') }}</span>
           </div>
-          <div class="opacity-0 translate-y-4 mb-5 transition-opacity duration-300">
+          <div class="mb-5">
             <h2 class="section-heading">{{ $t('contact.heading') }}</h2>
           </div>
-          <div class="opacity-0 translate-y-4 mb-12 transition-opacity duration-300">
+          <div class="mb-12">
             <p class="font-sans text-base text-ink-600 dark:text-cream-200/60 leading-relaxed max-w-md">
               {{ $t('contact.subtitle') }}
             </p>
           </div>
 
-          <div class="opacity-0 translate-y-4 space-y-4 transition-opacity duration-300">
+          <div class="space-y-4">
             <div v-for="info in contactInfo" :key="info.label"
               class="flex items-center gap-4 p-4 rounded-xl border border-ink-800/5 dark:border-cream-100/5 hover:border-gold-400/30 dark:hover:border-gold-400/20 transition-all duration-300 group"
             >
@@ -36,7 +36,7 @@
           </div>
         </div>
 
-        <div class="opacity-0 translate-y-8 transition-opacity duration-300">
+        <div>
           <form @submit.prevent="handleSubmit" class="space-y-5">
             <div>
               <label class="block font-sans text-xs font-medium tracking-wider uppercase text-ink-500 dark:text-cream-200/50 mb-2">
@@ -114,17 +114,14 @@
             </transition>
           </form>
         </div>
+
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
+import { ref } from 'vue'
 
 const form = ref({ name: '', email: '', message: '' })
 const sending = ref(false)
@@ -156,42 +153,9 @@ async function handleSubmit() {
   form.value = { name: '', email: '', message: '' }
   setTimeout(() => { sent.value = false }, 5000)
 }
-
-onMounted(() => {
-  const initGSAP = () => {
-    ScrollTrigger.refresh()
-
-    // Menembak utility class ".opacity-0" bawaan Tailwind yang dijamin aman tidak di-purge
-    gsap.to("#contact .opacity-0", {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      stagger: 0.15,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: '#contact',
-        start: 'top 90%',
-        once: true
-      }
-    })
-  }
-
-  if (document.readyState === 'complete') {
-    initGSAP()
-  } else {
-    window.addEventListener('load', initGSAP)
-    setTimeout(initGSAP, 300)
-  }
-})
 </script>
 
 <style scoped>
 .fade-enter-active, .fade-leave-active { transition: opacity 0.4s ease; }
 .fade-enter-from, .fade-leave-to { opacity: 0; }
-
-/* CSS Fallback murni jika GSAP terhambat di browser tertentu */
-:target .opacity-0 {
-  opacity: 1 !important;
-  transform: none !important;
-}
 </style>
