@@ -169,13 +169,18 @@ async function handleSubmit() {
 
 onMounted(() => {
   const targets = [eyebrowEl.value, headingEl.value, subtitleEl.value, infoEl.value, formEl.value]
-  targets.forEach((el, i) => {
-    gsap.to(el, {
-      opacity: 1, y: 0, duration: 0.8,
-      delay: i * 0.1,
-      ease: 'power3.out',
-      scrollTrigger: { trigger: el, start: 'top 88%', once: true }
-    })
+  
+  gsap.to(targets, {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    stagger: 0.1, // Otomatis memunculkan elemen satu per satu dari atas ke bawah
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '#contact', // Gunakan id container utama sebagai pemicu tunggal
+      start: 'top 85%',   // Begitu bagian atas section contact masuk 85% layar, semuanya langsung muncul
+      once: true
+    }
   })
 })
 </script>
